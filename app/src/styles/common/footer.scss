@@ -1,0 +1,211 @@
+.footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        background: $white;
+
+        &-form {
+            place-items: center;
+            padding: 150px 85px;
+
+
+        }
+
+        &-contact {
+            padding: 50px 60px;
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    &__form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        gap: 50px;
+
+        &-input {
+            border: none;
+            border-bottom: 1px solid $black;
+            margin-bottom: 50px;
+            background: inherit;
+            max-width: 370px;
+            width: 100%;
+            font-weight: 400;
+            font-family: 'PlayfairDisplay';
+            color: $black;
+            font-size: 18px;
+            line-height: 21px;
+
+            &:focus {
+                outline: none;
+                outline-offset: 0;
+            }
+        }
+
+        &-input::placeholder {
+            color: #838383;
+        }
+
+        &-description {
+            color: $black;
+            font-size: 18px;
+            line-height: 21px;
+            font-weight: 400;
+            font-family: 'PlayfairDisplay';
+        }
+
+        &-btn {
+            display: block;
+            max-width: 300px;
+            width: 100%;
+            padding: 15px 90px;
+            height: fit-content;
+
+            color: $black;
+            font-size: 18px;
+            line-height: 21px;
+            font-weight: 400;
+            font-family: 'PlayfairDisplay';
+
+            border: 1px solid $black;
+            background: inherit;
+
+
+        }
+    }
+
+    &__contact-img {
+        width: 100%;
+    }
+
+    &__contact-links {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 25px 0;
+    }
+
+    &__contact-numbers {
+        display: flex;
+        flex-direction: column;
+        padding: 25px 0;
+
+    }
+
+    &__contact-location {
+        display: flex;
+        flex-direction: column;
+        padding: 25px 0;
+    }
+
+    &__reserve {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        &-description{
+            padding: 50px 50px;
+        }
+
+        &-map{
+            
+            
+            overflow: hidden;
+        }
+    }
+
+    &__reserve-map{
+        
+            width: 100%;
+            max-height: 290px;
+            height: 100%;
+            
+    }
+}
+
+.contact {
+
+    &__numbers {
+        &-title {
+            color: $black;
+            font-weight: 400;
+            font-family: 'PlayfairDisplay';
+            font-size: 20px;
+            line-height: 25px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        &-tel {
+            display: inline-block;
+            color: $black;
+            font-weight: 400;
+            font-family: 'PlayfairDisplay';
+            font-size: 16px;
+            line-height: 20px;
+            margin-bottom: 10px;
+        }
+
+        &-mail {
+            display: inline-block;
+            color: $black;
+            font-weight: 400;
+            font-family: 'PlayfairDisplay';
+            font-size: 16px;
+            line-height: 20px;
+        }
+    }
+
+    &__location {
+        &-title {
+            color: $black;
+            font-weight: 400;
+            font-family: 'PlayfairDisplay';
+            font-size: 20px;
+            line-height: 25px;
+            margin-bottom: 20px;
+        }
+
+        &-address {
+            display: block;
+            color: $black;
+            font-weight: 400;
+            font-family: 'PlayfairDisplay';
+            font-size: 16px;
+            line-height: 20px;
+            max-width: 200px;
+            width: 100%;
+        }
+    }
+
+
+
+}
+
+.description {
+
+    &__title {
+        color: $black;
+        font-weight: 400;
+        font-family: 'PlayfairDisplay';
+        font-size: 48px;
+        line-height: 55px;
+        margin-bottom: 20px;
+    }
+
+    &__text {
+        color: $black;
+        font-weight: 400;
+        font-family: 'PlayfairDisplay';
+        font-size: 20px;
+        line-height: 45px;
+        max-width: 730px;
+        width: 100%;
+    }
+}
+

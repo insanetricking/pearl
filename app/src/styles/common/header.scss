@@ -1,0 +1,121 @@
+.header {
+
+    background: url('../images/header.webp') no-repeat;
+    background-position:center ;
+    
+
+    &__content {
+        position: relative;
+        min-height: 850px;
+        height: 100%;
+       
+    }
+
+
+    &__content-layout {
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        opacity: 1;
+        transition:all 0.8s;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        
+        padding: 50px;
+    }
+
+    &__content-btn {
+        display: inline-block;
+        cursor: pointer;
+        color: $white;
+        font-family: 'PlayfairDisplay';
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 21px;
+        padding: 14px 90px;
+        text-transform: uppercase;
+        border: 1px solid $white;
+    }
+
+    &__content-layout.disabled{
+        top: -100px;
+        opacity: 0;
+        transition:all 0.68;
+    }
+
+
+
+}
+
+.sideBar.active{
+    display: block;
+    transition: all 0.6s;
+    transform: translateX(0px);
+}
+
+.sideBar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    transform: translateX(-290px);
+    transition: all 0.6s;
+
+    background: $white;
+    width: fit-content;
+    padding: 23px 50px 56px 50px;
+    height: 100%;
+    // display: flex;
+    // flex-direction: column;
+    // align-items: flex-start;
+
+
+    &__logo {
+        max-height: 193px;
+        max-width: 189px;
+        width: 100%;
+        height: 100%;
+        margin-bottom: 53px;
+    }
+
+    &__menu {
+        display: flex;
+        flex-direction: column;
+        margin-left: 24px;
+        margin-right: 24px;
+        margin-bottom: 50px;
+
+        & li{
+            display: inline-block;
+            line-height: 23px;
+            font-size: 20px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+
+        &-link {
+            display: block;
+            
+            
+            color: inherit;
+            font-family: 'PlayfairDisplay';
+            font-weight: 400;
+
+        }
+    }
+
+    &__soc {
+        display: flex;
+        margin-bottom: 50px;
+
+        &-link {
+            display: block;
+            margin-right: 20px;
+        }
+    }
+
+}

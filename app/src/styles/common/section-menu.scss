@@ -1,0 +1,151 @@
+.menu {
+
+    &__inner {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        background: $white;
+    }
+
+    &__content {
+        max-width: 960px;
+        width: 100%;
+        min-height: 700px;
+
+
+    }
+
+
+    &__wrapper {
+        padding: 50px;
+    }
+
+    &__content {}
+
+    &__number {
+        font-size: 48px;
+        line-height: 50px;
+        font-family: 'PlayfairDisplay';
+        font-weight: 400;
+        text-align: center;
+        color: $black;
+        margin-bottom: 30px;
+    }
+
+    &__list {
+        overflow: auto;
+        height: 500px;
+        direction: rtl;
+        padding: 0 54px 54px;
+        display: block;
+
+
+
+    }
+
+    &__list::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+        background: rgb(255, 255, 255);
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0) 40%, rgba(196, 196, 196, 1) 50%, rgba(255, 255, 255, 0) 40%);
+    }
+
+    &__list::-webkit-scrollbar-thumb {
+        background: #C4C4C4;
+        
+    }
+
+   &__item{
+    margin-bottom: 30px;
+   }
+
+    &__name {
+        font-size: 20px;
+        line-height: 24px;
+        font-family: 'PlayfairDisplay';
+        font-weight: 400;
+        color: $black;
+        direction: rtl;
+        text-align: left;
+        margin-bottom: 10px;
+    }
+
+
+    &__description {
+        font-size: 18px;
+        line-height: 24px;
+        font-family: 'PlayfairDisplay';
+        font-weight: 400;
+        color: $black;
+        direction: rtl;
+        text-align: left;
+        max-width: 765px;
+        width: 100%;
+
+        & span {
+            display: block;
+        }
+    }
+
+
+
+
+
+}
+
+.slider {
+    position: relative;
+    min-height: 700px;
+    max-width: 960px;
+    // width: 100%;
+    overflow: hidden;
+
+    &__wrapper {}
+
+    &__items {
+        // max-width: 960px;
+        width: 100%;
+        height: 100%;
+        display: flex;
+
+
+    }
+
+    &__slide {
+        max-width: 960px;
+        width: 100%;
+    }
+
+    &__img {
+        width: unset;
+    }
+
+    &__pagination {
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+        bottom: 43px;
+        left: 0;
+        right: 0;
+        max-width: 220px;
+        width: 100%;
+        margin: 0 auto;
+
+
+        z-index: 9999;
+    }
+
+    &__round {
+        display: block;
+        max-width: 20px;
+        width: 100%;
+        min-height: 20px;
+        height: 100%;
+        background: rgba(196, 196, 196, 0.7);
+        border-radius: 50%;
+
+        &.active {
+            background: $white;
+        }
+    }
+
+}
