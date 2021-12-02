@@ -32,6 +32,8 @@ class Slider {
             let slideImages = [...slider.querySelectorAll(obj.slideImg)];
             let width = slider.offsetWidth;
             let height = slider.clientHeight;
+            
+            slider.style.height = width*76 /100 + 'px';
 
 
             slideImages.forEach(item => {
