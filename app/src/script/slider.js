@@ -6,14 +6,20 @@ class Slider {
 
         this.pagination = [...document.querySelectorAll(obj.pagination)];
 
-        
+
         this.init(obj)
 
-        window.addEventListener('resize',() => this.init(obj));
+        window.addEventListener('resize', () => {
+            location.reload();
+            this.init(obj);
+            
+        }
+
+        );
 
     }
 
-    init(obj){
+    init(obj) {
 
 
         for (let i = 0; i < this.pagination.length; i++) {
@@ -24,29 +30,29 @@ class Slider {
             let buttons = [...paginationBar.children];
             let slideItem = slider.querySelector(obj.item);
             let slideImages = [...slider.querySelectorAll(obj.slideImg)];
-            let width = slider.clientWidth;
+            let width = slider.offsetWidth;
             let height = slider.clientHeight;
 
-            
 
-            // console.log(slideImages);
+            slideImages.forEach(item => {
+                item.style.width = width + 'px';
+                item.style.height = 'auto';
 
-            slideImages.forEach(item =>{
-                item.style.width = width +'px';
-                item.style.height = 'auto'; 
+
             })
 
 
             paginationBar.addEventListener('click', (e) => {
-                this.change(e, paginationBar, buttons, width, height, slideItem );
+                this.change(e, paginationBar, buttons, width, height, slideItem);
             })
         }
 
+
     }
 
-    change(e, paginationBar, buttons, width, height,slideItem) {
+    change(e, paginationBar, buttons, width, height, slideItem) {
 
-    
+
         buttons.forEach((button, i) => {
             if (e.target != paginationBar) {
                 button.classList.remove('active');
