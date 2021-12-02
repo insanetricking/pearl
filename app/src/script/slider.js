@@ -1,86 +1,19 @@
 
-// First Try//
-// class Slider {
-//     constructor(obj) {
-//         this.slider = document.querySelector(obj.slider);
-//         this.item = this.slider.querySelector(obj.item);
-//         this.slides = [...(this.item.querySelectorAll(obj.slides))];
-//         this.pagination = this.slider.querySelector(obj.pagination);
-//         this.buttons = [...(this.pagination.querySelectorAll(obj.buttons))];
-
-//         this.width = this.item.clientWidth;
-//         this.height = this.item.clientHeight;
-
-//         this.activeSlide = 0;
-//         this.prevSlide = 0;
-
-//         this.moveSize = this.width;
-
-
-
-
-
-//         this.pagination.addEventListener('click', (e) => {
-//             this.change(e);
-//         })
-
-
-//     }
-
-//     change(e) {
-
-//         this.buttons.forEach((button, i) => {
-//             if (e.target != this.pagination) {
-//                 button.classList.remove('active');
-//                 if (button == e.target) {
-//                     button.classList.add('active');
-
-//                     console.log(i);
-//                     console.log(this.width);
-
-//                     if (i == 0) {
-//                         this.item.style = `
-//                     transition:0.6s;
-//                     transform:translateX(0px)
-//                     `;
-//                     } else {
-//                         this.item.style = `
-//                     transition:0.6s;
-//                     transform:translateX(-${i * 960}px)
-//                     `;
-//                     }
-
-//                 }
-//             }
-
-//         })
-
-
-
-
-//     }
-
-
-// }
-
-
-
-
-// const slider = new Slider({
-//     sliderWrapper: '.slider__wrapper',
-//     slider: '.slider',
-//     item: '.slider__items',
-//     buttons: '.slider__round',
-//     slides: '.slider__slide',
-//     pagination: '.slider__pagination'
-// });
-
-
 // Second Try//
 
 class Slider {
     constructor(obj) {
+
         this.pagination = [...document.querySelectorAll(obj.pagination)];
+
+        
+        this.init(obj)
+
+        window.addEventListener('resize',() => this.init(obj));
+
+    }
+
+    init(obj){
 
 
         for (let i = 0; i < this.pagination.length; i++) {
@@ -90,18 +23,24 @@ class Slider {
             let paginationBar = slider.querySelector(obj.pagination);
             let buttons = [...paginationBar.children];
             let slideItem = slider.querySelector(obj.item);
-            let width = slideItem.clientWidth;
-            let height = slideItem.clientHeight;
+            let slideImages = [...slider.querySelectorAll(obj.slideImg)];
+            let width = slider.clientWidth;
+            let height = slider.clientHeight;
 
+            
 
+            // console.log(slideImages);
+
+            slideImages.forEach(item =>{
+                item.style.width = width +'px';
+                item.style.height = 'auto'; 
+            })
 
 
             paginationBar.addEventListener('click', (e) => {
-                this.change(e, paginationBar, buttons, width, height, slideItem);
+                this.change(e, paginationBar, buttons, width, height, slideItem );
             })
         }
-
-
 
     }
 
@@ -122,7 +61,7 @@ class Slider {
                     } else {
                         slideItem.style = `
                             transition:0.6s;
-                            transform:translateX(-${i * 960}px)
+                            transform:translateX(-${i * width}px)
                             `;
                     }
 
@@ -147,6 +86,6 @@ const slider = new Slider({
     slider: '.slider',
     item: '.slider__items',
     buttons: '.slider__round',
-    slides: '.slider__slide',
+    slideImg: '.slider__img',
     pagination: '.slider__pagination'
 });
