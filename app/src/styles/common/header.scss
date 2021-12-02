@@ -119,3 +119,17 @@
     }
 
 }
+
+
+@media (max-width:680px) {
+    .header__content-layout{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        & .layout__img{
+            max-width: 50px;
+            margin-bottom: 20px;
+        }
+
+    }
+}
