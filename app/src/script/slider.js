@@ -35,6 +35,12 @@ class Slider {
             
             
 
+            
+
+            if(window.matchMedia('(max-width: 768px)').matches){
+                slider.style.maxWidth = width;
+                slider.style.width = 100+'%';
+            }
 
             slideImages.forEach(item => {
                 item.style.width = width + 'px';
